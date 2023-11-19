@@ -33,6 +33,7 @@ class HomeLayout extends StatelessWidget {
             child: Icon(
               Icons.add,
               size: 30.r,
+              color: Colors.white,
             ),
           ),
           bottomNavigationBar: ClipRRect(
