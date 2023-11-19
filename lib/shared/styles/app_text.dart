@@ -29,5 +29,20 @@ class AppText {
     color: AppColor.lightPrimaryColor
   );
 
+ static TextStyle labelLarge = GoogleFonts.poppins(
+     fontSize: 18.sp,
+     fontWeight: FontWeight.bold,
+     color: AppColor.lightPrimaryColor
+ );
+ static TextStyle labelMedium = GoogleFonts.poppins(
+     fontSize: 14.sp,
+     fontWeight: FontWeight.bold,
+     color: Colors.black
+ );
+ static TextStyle labelSmall = GoogleFonts.poppins(
+     fontSize: 12.sp,
+     fontWeight: FontWeight.normal,
+     color: Colors.black
+ );
 
 }

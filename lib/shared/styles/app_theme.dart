@@ -29,6 +29,10 @@ class AppTheme {
 
       displayMedium: AppText.displayMedium,
       displaySmall: AppText.displaySmall,
+
+      labelLarge: AppText.labelLarge,
+      labelMedium: AppText.labelMedium,
+      labelSmall: AppText.labelSmall
     ),
 
     bottomAppBarTheme: BottomAppBarTheme(
@@ -75,6 +79,10 @@ class AppTheme {
 
       displayMedium: AppText.displayMedium,
       displaySmall: AppText.displaySmall,
+
+        labelLarge: AppText.labelLarge,
+        labelMedium: AppText.labelMedium.copyWith(color: Colors.white),
+        labelSmall: AppText.labelSmall.copyWith(color: Colors.white)
     ),
 
     bottomAppBarTheme: BottomAppBarTheme(

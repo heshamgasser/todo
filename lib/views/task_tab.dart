@@ -1,11 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_app/provider/app_provider.dart';
 import 'package:todo_app/provider/tasks_provider.dart';
 import 'package:todo_app/shared/styles/app_color.dart';
 import 'package:todo_app/views/widget/date_picker_container.dart';
+import 'package:todo_app/views/widget/task_card.dart';
 
 class TasksTab extends StatelessWidget {
   const TasksTab({super.key});
@@ -32,6 +32,15 @@ class TasksTab extends StatelessWidget {
                     tasksProvider.changeSelectedDate(context);
                   },
                   selectedDate: tasksProvider.selectedDate),
+              SizedBox(height: 20.h),
+             Expanded(
+               child: ListView.separated(itemBuilder: (context, index) {
+                 return TaskCard();
+               }, separatorBuilder: (context, index) {
+                 return SizedBox(height: 10.h);
+               }, itemCount: 5),
+             )
+
             ],
           ),
         );
