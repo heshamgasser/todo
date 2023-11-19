@@ -5,8 +5,10 @@ import 'package:todo_app/shared/styles/app_text.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
     appBarTheme: AppBarTheme(
       toolbarHeight: 200.h,
+      centerTitle: true,
       color: AppColor.lightPrimaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -17,13 +19,79 @@ class AppTheme {
     ),
 
     scaffoldBackgroundColor: AppColor.lightGreenColor,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
 
     textTheme: TextTheme(
       titleLarge: AppText.titleLarge,
+      titleMedium: AppText.titleMedium,
+
+
+      displayMedium: AppText.displayMedium,
+      displaySmall: AppText.displaySmall,
     ),
 
+    bottomAppBarTheme: BottomAppBarTheme(
+      color: Colors.white,
+      height: 100.h,
+      shape: CircularNotchedRectangle(),
+    ),
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      selectedIconTheme: IconThemeData(size: 30.r),
+      unselectedIconTheme: IconThemeData(size: 30.r),
+      backgroundColor: Colors.transparent,
+      selectedItemColor: AppColor.lightPrimaryColor,
+      unselectedItemColor: AppColor.grayColor,
+      elevation: 0.0,
+
+    ),
 
   );
 
-  static ThemeData darkTheme = ThemeData();
+  static ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    appBarTheme: AppBarTheme(
+      toolbarHeight: 200.h,
+      centerTitle: true,
+      color: AppColor.lightPrimaryColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20.r),
+          bottomRight: Radius.circular(20.r),
+        ),
+      ),
+    ),
+
+    scaffoldBackgroundColor: AppColor.darkBlackColor,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+
+    textTheme: TextTheme(
+      titleLarge: AppText.titleLarge,
+      titleMedium: AppText.titleMedium,
+
+
+      displayMedium: AppText.displayMedium,
+      displaySmall: AppText.displaySmall,
+    ),
+
+    bottomAppBarTheme: BottomAppBarTheme(
+      color: AppColor.darkBlackColor,
+      height: 100.h,
+      shape: CircularNotchedRectangle(),
+    ),
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      selectedIconTheme: IconThemeData(size: 30.r),
+      unselectedIconTheme: IconThemeData(size: 30.r),
+      backgroundColor: Colors.transparent,
+      selectedItemColor: AppColor.lightPrimaryColor,
+      unselectedItemColor: AppColor.grayColor,
+      elevation: 0.0,
+
+    ),
+  );
 }
