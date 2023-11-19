@@ -7,6 +7,7 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     appBarTheme: AppBarTheme(
       toolbarHeight: 200.h,
+      centerTitle: true,
       color: AppColor.lightPrimaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -17,11 +18,29 @@ class AppTheme {
     ),
 
     scaffoldBackgroundColor: AppColor.lightGreenColor,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
 
     textTheme: TextTheme(
       titleLarge: AppText.titleLarge,
     ),
 
+    bottomAppBarTheme: BottomAppBarTheme(
+      color: Colors.white,
+      height: 100.h,
+      shape: CircularNotchedRectangle(),
+    ),
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      selectedIconTheme: IconThemeData(size: 30.r),
+      unselectedIconTheme: IconThemeData(size: 30.r),
+      backgroundColor: Colors.transparent,
+      selectedItemColor: AppColor.lightPrimaryColor,
+      unselectedItemColor: AppColor.grayColor,
+      elevation: 0.0,
+
+    ),
 
   );
 
