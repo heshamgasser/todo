@@ -1,0 +1,12 @@
+{
+  "todoList": "To Do List",
+  "settings": "Settings",
+  "tasks": "Tasks",
+  "language": "Language",
+  "english": "English",
+  "arabic": "Arabic",
+  "themeMode": "Theme Mode",
+  "lightTheme": "Light Theme",
+  "darkTheme": "Dark Theme"
+
+}

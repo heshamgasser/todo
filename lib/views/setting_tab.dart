@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/provider/app_provider.dart';
-import 'package:todo_app/provider/home_provider.dart';
-import 'package:todo_app/shared/styles/app_color.dart';
 import 'package:todo_app/views/widget/setting_container.dart';
 import 'package:todo_app/views/widget/setting_modalBottomSheet.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingTab extends StatelessWidget {
   const SettingTab({super.key});
@@ -20,29 +19,31 @@ class SettingTab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Settings',
+            AppLocalizations.of(context)!.settings,
             style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 20.h),
           Text(
-            'Language',
+            AppLocalizations.of(context)!.language,
             style: Theme.of(context).brightness == Brightness.light
                 ? Theme.of(context).textTheme.displayMedium
                 : Theme.of(context)
-                .textTheme
-                .displayMedium!
-                .copyWith(color: Colors.white),
+                    .textTheme
+                    .displayMedium!
+                    .copyWith(color: Colors.white),
           ),
           SizedBox(
             height: 15.h,
           ),
           SettingContainer(
-            containterText: appProvider.languageCode == 'en' ? 'English' : 'Arabic',
+            containterText: appProvider.languageCode == 'en'
+                ? AppLocalizations.of(context)!.english
+                : AppLocalizations.of(context)!.arabic,
             widget: SettingModalBottomSheet(
-              title: 'Language',
-              optionOne: 'English',
-              optionTwo: 'Arabic',
+              title: AppLocalizations.of(context)!.language,
+              optionOne: AppLocalizations.of(context)!.english,
+              optionTwo: AppLocalizations.of(context)!.arabic,
               selected: appProvider.languageCode == 'en' ? true : false,
               optionOneFunction: () {
                 appProvider.changeLanguageCode('en');
@@ -54,24 +55,28 @@ class SettingTab extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           Text(
-            'Theme Mode',
+            AppLocalizations.of(context)!.themeMode,
             style: Theme.of(context).brightness == Brightness.light
                 ? Theme.of(context).textTheme.displayMedium
                 : Theme.of(context)
-                .textTheme
-                .displayMedium!
-                .copyWith(color: Colors.white),
+                    .textTheme
+                    .displayMedium!
+                    .copyWith(color: Colors.white),
           ),
           SizedBox(
             height: 15.h,
           ),
           SettingContainer(
-            containterText: appProvider.themeMode == ThemeMode.light ? 'Light Theme' : 'Dark Theme',
+            containterText: appProvider.themeMode == ThemeMode.light
+                ? AppLocalizations.of(context)!.lightTheme
+                : AppLocalizations.of(context)!.darkTheme,
             widget: SettingModalBottomSheet(
-              title: 'Theme Mode',
-              optionOne: 'Light Theme',
-              optionTwo: 'Dark Theme',
-              selected: Theme.of(context).brightness == Brightness.light ? true : false,
+              title: AppLocalizations.of(context)!.themeMode,
+              optionOne: AppLocalizations.of(context)!.lightTheme,
+              optionTwo: AppLocalizations.of(context)!.darkTheme,
+              selected: Theme.of(context).brightness == Brightness.light
+                  ? true
+                  : false,
               optionOneFunction: () {
                 appProvider.changeThemeMode(ThemeMode.light);
               },
