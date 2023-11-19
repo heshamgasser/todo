@@ -7,7 +7,7 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(
-      toolbarHeight: 200.h,
+      toolbarHeight: 100.h,
       centerTitle: true,
       color: AppColor.lightPrimaryColor,
       shape: RoundedRectangleBorder(
@@ -53,7 +53,7 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     appBarTheme: AppBarTheme(
-      toolbarHeight: 200.h,
+      toolbarHeight: 100.h,
       centerTitle: true,
       color: AppColor.lightPrimaryColor,
       shape: RoundedRectangleBorder(
