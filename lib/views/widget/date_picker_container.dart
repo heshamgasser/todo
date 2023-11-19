@@ -11,12 +11,13 @@ class DateContainer extends StatelessWidget {
   Function forwardFunction;
   Function selectDate;
   DateTime selectedDate;
+  bool ignored;
 
   DateContainer(
       {required this.backFunction,
       required this.forwardFunction,
       required this.selectDate,
-      required this.selectedDate});
+      required this.selectedDate, this.ignored = false});
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +25,23 @@ class DateContainer extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(
-          onPressed: () {
-            backFunction();
-          },
-          icon: CircleAvatar(
-            backgroundColor: AppColor.lightPrimaryColor,
-            radius: 25.r,
-            child: Center(
-              child: Icon(
-                appProvider.languageCode == 'en'
-                    ? Icons.keyboard_arrow_left
-                    : Icons.keyboard_arrow_right,
-                size: 30.r,
-                color: Colors.white,
+        IgnorePointer(
+          ignoring: ignored,
+          child: IconButton(
+            onPressed: () {
+              backFunction();
+            },
+            icon: CircleAvatar(
+              backgroundColor: AppColor.lightPrimaryColor,
+              radius: 25.r,
+              child: Center(
+                child: Icon(
+                  appProvider.languageCode == 'en'
+                      ? Icons.keyboard_arrow_left
+                      : Icons.keyboard_arrow_right,
+                  size: 30.r,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),

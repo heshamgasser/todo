@@ -52,6 +52,12 @@ class AppTheme {
 
     ),
 
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.symmetric(horizontal: 20.w , vertical: 15.h),
+      )
+    ),
+
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -77,7 +83,7 @@ class AppTheme {
       titleMedium: AppText.titleMedium,
 
 
-      displayMedium: AppText.displayMedium,
+      displayMedium: AppText.displayMedium.copyWith(color: Colors.white),
       displaySmall: AppText.displaySmall,
 
         labelLarge: AppText.labelLarge,
@@ -100,6 +106,12 @@ class AppTheme {
       unselectedItemColor: AppColor.grayColor,
       elevation: 0.0,
 
+    ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 20.w , vertical: 15.h),
+        )
     ),
   );
 }

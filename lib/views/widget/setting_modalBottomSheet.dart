@@ -31,12 +31,7 @@ class SettingModalBottomSheet extends StatelessWidget {
         children: [
           Text(
             title,
-            style: Theme.of(context).brightness == Brightness.light
-                ? Theme.of(context).textTheme.displayMedium
-                : Theme.of(context)
-                    .textTheme
-                    .displayMedium!
-                    .copyWith(color: Colors.white),
+            style: Theme.of(context).textTheme.displayMedium
           ),
           SizedBox(height: 20.h),
           InkWell(

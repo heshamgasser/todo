@@ -26,12 +26,7 @@ class SettingTab extends StatelessWidget {
           SizedBox(height: 20.h),
           Text(
             AppLocalizations.of(context)!.language,
-            style: Theme.of(context).brightness == Brightness.light
-                ? Theme.of(context).textTheme.displayMedium
-                : Theme.of(context)
-                    .textTheme
-                    .displayMedium!
-                    .copyWith(color: Colors.white),
+            style: Theme.of(context).textTheme.displayMedium
           ),
           SizedBox(
             height: 15.h,
@@ -56,12 +51,7 @@ class SettingTab extends StatelessWidget {
           SizedBox(height: 20.h),
           Text(
             AppLocalizations.of(context)!.themeMode,
-            style: Theme.of(context).brightness == Brightness.light
-                ? Theme.of(context).textTheme.displayMedium
-                : Theme.of(context)
-                    .textTheme
-                    .displayMedium!
-                    .copyWith(color: Colors.white),
+            style: Theme.of(context).textTheme.displayMedium
           ),
           SizedBox(
             height: 15.h,

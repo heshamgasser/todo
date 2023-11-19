@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/provider/home_provider.dart';
 import 'package:todo_app/shared/styles/app_color.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:todo_app/views/widget/add_task.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = 'Home Layout';
@@ -29,7 +30,20 @@ class HomeLayout extends StatelessWidget {
             shape: StadiumBorder(
               side: BorderSide(color: Colors.white, width: 3.r),
             ),
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                isScrollControlled: true,
+                isDismissible: false,
+                backgroundColor:
+                    Theme.of(context).brightness == Brightness.light
+                        ? AppColor.lightGreenColor
+                        : AppColor.darkBlackColor,
+                context: context,
+                builder: (context) {
+                  return AddTask();
+                },
+              );
+            },
             child: Icon(
               Icons.add,
               size: 30.r,

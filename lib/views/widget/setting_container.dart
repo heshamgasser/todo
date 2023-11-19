@@ -11,17 +11,16 @@ class SettingContainer extends StatelessWidget {
 
   Widget widget;
 
-  SettingContainer(
-      {required this.containterText,
-      required this.widget});
+  SettingContainer({required this.containterText, required this.widget});
 
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
       onTap: () {
         showModalBottomSheet(
-          backgroundColor: Theme.of(context).brightness == Brightness.light ? AppColor.lightGreenColor : AppColor.darkBlackColor,
+          backgroundColor: Theme.of(context).brightness == Brightness.light
+              ? AppColor.lightGreenColor
+              : AppColor.darkBlackColor,
           context: context,
           builder: (context) {
             return widget;
