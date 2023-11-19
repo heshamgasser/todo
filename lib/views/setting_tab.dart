@@ -38,7 +38,7 @@ class SettingTab extends StatelessWidget {
             height: 15.h,
           ),
           SettingContainer(
-            containterText: 'English',
+            containterText: appProvider.languageCode == 'en' ? 'English' : 'Arabic',
             widget: SettingModalBottomSheet(
               title: 'Language',
               optionOne: 'English',
@@ -66,7 +66,7 @@ class SettingTab extends StatelessWidget {
             height: 15.h,
           ),
           SettingContainer(
-            containterText: 'Light Theme',
+            containterText: appProvider.themeMode == ThemeMode.light ? 'Light Theme' : 'Dark Theme',
             widget: SettingModalBottomSheet(
               title: 'Theme Mode',
               optionOne: 'Light Theme',

@@ -23,7 +23,7 @@ class Todo extends StatelessWidget {
   Widget build(BuildContext context) {
 
     var appProvider = Provider.of<AppProvider>(context);
-
+      appProvider.getSavedSettings();
     return ScreenUtilInit(
       designSize: Size(412, 870),
       builder: (context, child) {
