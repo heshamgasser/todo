@@ -23,6 +23,11 @@ class AppTheme {
 
     textTheme: TextTheme(
       titleLarge: AppText.titleLarge,
+      titleMedium: AppText.titleMedium,
+
+
+      displayMedium: AppText.displayMedium,
+      displaySmall: AppText.displaySmall,
     ),
 
     bottomAppBarTheme: BottomAppBarTheme(
