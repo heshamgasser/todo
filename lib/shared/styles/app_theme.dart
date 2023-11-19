@@ -7,7 +7,7 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(
-      toolbarHeight: 200.h,
+      toolbarHeight: 100.h,
       centerTitle: true,
       color: AppColor.lightPrimaryColor,
       shape: RoundedRectangleBorder(
@@ -29,6 +29,10 @@ class AppTheme {
 
       displayMedium: AppText.displayMedium,
       displaySmall: AppText.displaySmall,
+
+      labelLarge: AppText.labelLarge,
+      labelMedium: AppText.labelMedium,
+      labelSmall: AppText.labelSmall
     ),
 
     bottomAppBarTheme: BottomAppBarTheme(
@@ -53,7 +57,7 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     appBarTheme: AppBarTheme(
-      toolbarHeight: 200.h,
+      toolbarHeight: 100.h,
       centerTitle: true,
       color: AppColor.lightPrimaryColor,
       shape: RoundedRectangleBorder(
@@ -75,6 +79,10 @@ class AppTheme {
 
       displayMedium: AppText.displayMedium,
       displaySmall: AppText.displaySmall,
+
+        labelLarge: AppText.labelLarge,
+        labelMedium: AppText.labelMedium.copyWith(color: Colors.white),
+        labelSmall: AppText.labelSmall.copyWith(color: Colors.white)
     ),
 
     bottomAppBarTheme: BottomAppBarTheme(
