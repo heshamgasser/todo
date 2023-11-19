@@ -9,7 +9,14 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+ThemeMode themeMode = ThemeMode.system;
 
+  void changeThemeMode (ThemeMode selectedThemeMode){
+    if (themeMode == selectedThemeMode) return;
+    themeMode = selectedThemeMode;
+    notifyListeners();
+
+  }
 
 
 
