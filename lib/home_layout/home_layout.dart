@@ -50,6 +50,8 @@ class HomeLayout extends StatelessWidget {
             ),
           ),
 
+          body: homeProvider.tabs[homeProvider.selectedIndex],
+
         );
       },
 
