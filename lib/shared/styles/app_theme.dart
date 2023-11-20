@@ -25,7 +25,7 @@ class AppTheme {
     textTheme: TextTheme(
       titleLarge: AppText.titleLarge,
       titleMedium: AppText.titleMedium,
-
+      titleSmall: AppText.titleSmall,
 
       displayMedium: AppText.displayMedium,
       displaySmall: AppText.displaySmall,
@@ -81,7 +81,7 @@ class AppTheme {
     textTheme: TextTheme(
       titleLarge: AppText.titleLarge,
       titleMedium: AppText.titleMedium,
-
+      titleSmall: AppText.titleSmall,
 
       displayMedium: AppText.displayMedium.copyWith(color: Colors.white),
       displaySmall: AppText.displaySmall,

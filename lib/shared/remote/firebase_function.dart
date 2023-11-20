@@ -7,21 +7,20 @@ class FireBaseFunction {
         .collection('Tasks')
         .withConverter<OneTaskModel>(
           fromFirestore: (snapshot, options) =>
-              OneTaskModel.fromJson(snapshot.data()!),
+              OneTaskModel.fromjson(snapshot.data()!),
           toFirestore: (value, options) => value.toJson(),
         );
   }
 
-static  Future<void> addTaskToFireStore(OneTaskModel taskModel) async {
+  static Future<void> addTaskToFireStore(OneTaskModel taskModel) async {
     var collectionRef = getCollection();
     var docRef = collectionRef.doc();
     taskModel.id = docRef.id;
     docRef.set(taskModel);
   }
 
- static Future<DocumentSnapshot<OneTaskModel>> getTaskFromFireStore() async {
+  static Stream<QuerySnapshot<OneTaskModel>> getTaskFromFireStore() {
     var collectionRef = getCollection();
-    var docRef = collectionRef.doc();
-    return docRef.get();
+    return collectionRef.snapshots();
   }
 }
