@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/models/one_task_model.dart';
 import 'package:todo_app/views/setting_tab.dart';
 import 'package:todo_app/views/task_tab.dart';
 
@@ -15,6 +16,8 @@ class HomeProvider extends ChangeNotifier {
 
   TextEditingController taskTitleController = TextEditingController();
   TextEditingController taskDetailController = TextEditingController();
+
+
 
   DateTime selectedDate = DateUtils.dateOnly(DateTime.now());
 

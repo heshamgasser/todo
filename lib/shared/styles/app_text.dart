@@ -15,6 +15,11 @@ class AppText {
     fontWeight: FontWeight.bold,
     color: AppColor.lightPrimaryColor
   );
+ static TextStyle titleSmall = GoogleFonts.poppins(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.bold,
+    color: Colors.white
+  );
 
 
 
