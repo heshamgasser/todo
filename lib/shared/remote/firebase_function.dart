@@ -34,7 +34,13 @@ class FireBaseFunction {
     var collectionRef = getCollection();
     var docRef = collectionRef.doc(taskId);
     taskModel.status = !taskModel.status;
-    docRef.update(taskModel.toJson());
+    return docRef.update(taskModel.toJson());
+  }
+
+  Future<void> updateTask (String taskId, OneTaskModel taskModel) async {
+    var collectionRef = getCollection();
+    var docRef = collectionRef.doc(taskId);
+    return docRef.update(taskModel.toJson());
   }
 
 }
