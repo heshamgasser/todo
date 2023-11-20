@@ -9,8 +9,8 @@ import 'package:todo_app/shared/styles/app_color.dart';
 import 'package:todo_app/views/widget/custom_textFormField.dart';
 import 'package:todo_app/views/widget/date_picker_container_addTask.dart';
 import 'package:todo_app/views/widget/time_picker_container.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'date_picker_container.dart';
 
 class AddTask extends StatelessWidget {
   const AddTask({super.key});
@@ -31,23 +31,23 @@ class AddTask extends StatelessWidget {
               child: ListView(
                 children: [
                   Text(
-                    'Add New Task',
+                    AppLocalizations.of(context)!.addNewTask,
                     style: Theme.of(context).textTheme.displayMedium,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 20.h),
                   CustomTextFormField(
-                      labelText: 'Enter Your Task',
+                      labelText: AppLocalizations.of(context)!.enterYourTask,
                       controller: homeProvider.taskTitleController),
                   SizedBox(height: 20.h),
                   CustomTextFormField(
-                    labelText: 'Enter Your Task Details',
+                    labelText: AppLocalizations.of(context)!.taskDetail,
                     controller: homeProvider.taskDetailController,
                     maxLines: 5,
                   ),
                   SizedBox(height: 20.h),
                   Text(
-                    'Select Date',
+                    AppLocalizations.of(context)!.selectDate,
                     style: Theme.of(context).textTheme.displayMedium,
                   ),
                   SizedBox(height: 10.h),
@@ -60,7 +60,7 @@ class AddTask extends StatelessWidget {
                   ),
                   SizedBox(height: 20.h),
                   Text(
-                    'Select Time',
+                    AppLocalizations.of(context)!.selectTime,
                     style: Theme.of(context).textTheme.displayMedium,
                   ),
                   SizedBox(height: 10.h),
@@ -91,7 +91,7 @@ class AddTask extends StatelessWidget {
                             }
                           },
                           child: Text(
-                            'Add',
+                            AppLocalizations.of(context)!.add,
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),
@@ -105,7 +105,7 @@ class AddTask extends StatelessWidget {
                             Navigator.pop(context);
                           },
                           child: Text(
-                            'Cancel',
+                            AppLocalizations.of(context)!.cancel,
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),

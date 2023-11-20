@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:todo_app/models/one_task_model.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../shared/styles/app_color.dart';
 
 class TaskCard extends StatelessWidget {
@@ -11,7 +11,10 @@ class TaskCard extends StatelessWidget {
   Function deleteFunction;
   Function doneFunction;
 
-  TaskCard({required this.taskModel, required this.deleteFunction, required this.doneFunction});
+  TaskCard(
+      {required this.taskModel,
+      required this.deleteFunction,
+      required this.doneFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class TaskCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.r),
             foregroundColor: Colors.white,
             icon: Icons.delete,
-            label: 'Delete',
+            label: AppLocalizations.of(context)!.delete,
           ),
         ],
       ),
@@ -42,16 +45,10 @@ class TaskCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.r),
             foregroundColor: Colors.white,
             icon: Icons.done,
-            label: 'Done',
+            label: AppLocalizations.of(context)!.done,
           ),
         ],
       ),
-
-
-
-
-
-
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
@@ -139,7 +136,7 @@ class TaskCard extends StatelessWidget {
                   child: taskModel.status
                       ? Center(
                           child: Text(
-                            'Done!',
+                            AppLocalizations.of(context)!.done,
                             style: Theme.of(context).textTheme.titleSmall,
                           ),
                         )

@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/provider/home_provider.dart';
 import 'package:todo_app/shared/styles/app_color.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:todo_app/views/widget/add_task.dart';
+import 'package:todo_app/views/add_task.dart';
 
 class HomeLayout extends StatelessWidget {
   static const String routeName = 'Home Layout';
