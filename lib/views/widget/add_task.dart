@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/models/one_task_model.dart';
 import 'package:todo_app/provider/home_provider.dart';
+import 'package:todo_app/shared/remote/firebase_function.dart';
 import 'package:todo_app/shared/styles/app_color.dart';
 import 'package:todo_app/views/widget/custom_textFormField.dart';
 import 'package:todo_app/views/widget/date_picker_container_addTask.dart';
@@ -50,8 +52,8 @@ class AddTask extends StatelessWidget {
                   ),
                   SizedBox(height: 10.h),
                   DatePickerContainerAddTask(
-                    dateText:
-                        DateFormat('dd-MMMM-yyy').format(homeProvider.selectedDate),
+                    dateText: DateFormat('dd-MMMM-yyy')
+                        .format(homeProvider.selectedDate),
                     selectDate: () {
                       homeProvider.changeSelectedDate(context);
                     },
@@ -76,8 +78,17 @@ class AddTask extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColor.lightPrimaryColor),
                           onPressed: () {
-                            if (homeProvider.formKey.currentState!
-                                .validate()) {}
+                            if (homeProvider.formKey.currentState!.validate()) {
+                              OneTaskModel taskModel = OneTaskModel(
+                                  title: homeProvider.taskTitleController.text,
+                                  details:
+                                      homeProvider.taskDetailController.text,
+                                  date: homeProvider.selectedDate.toString(),
+                                  time: homeProvider.time.format(context),
+                                  status: false);
+                              FireBaseFunction.addTaskToFireStore(taskModel);
+                              Navigator.pop(context);
+                            }
                           },
                           child: Text(
                             'Add',
