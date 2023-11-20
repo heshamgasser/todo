@@ -19,8 +19,22 @@ class FireBaseFunction {
     docRef.set(taskModel);
   }
 
-  static Stream<QuerySnapshot<OneTaskModel>> getTaskFromFireStore() {
+  static Stream<QuerySnapshot<OneTaskModel>> getTaskFromFireStore(String date) {
     var collectionRef = getCollection();
-    return collectionRef.snapshots();
+    return collectionRef.where('date', isEqualTo:date).snapshots();
   }
+
+ static Future<void> deleteTask (String taskId) async{
+    var collectionRef = getCollection();
+    var docRef = collectionRef.doc(taskId);
+   docRef.delete();
+  }
+
+  static Future<void> updateStatus (String taskId, OneTaskModel taskModel) async {
+    var collectionRef = getCollection();
+    var docRef = collectionRef.doc(taskId);
+    taskModel.status = !taskModel.status;
+    docRef.update(taskModel.toJson());
+  }
+
 }

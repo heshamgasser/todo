@@ -34,44 +34,58 @@ class TasksTab extends StatelessWidget {
                   },
                   selectedDate: tasksProvider.selectedDate),
               SizedBox(height: 20.h),
-              StreamBuilder(stream: FireBaseFunction.getTaskFromFireStore(),
+              StreamBuilder(
+                stream: FireBaseFunction.getTaskFromFireStore(
+                  tasksProvider.selectedDate.toString(),
+                ),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(child: CircularProgressIndicator());
                   }
 
                   if (snapshot.hasError) {
-                    return Text('Something Went Wrong', style: Theme
-                        .of(context)
-                        .textTheme
-                        .displayMedium,);
+                    return Text(
+                      'Something Went Wrong',
+                      style: Theme.of(context).textTheme.displayMedium,
+                    );
                   }
 
-                  if (!snapshot.hasData){
-                    return Text('There is No Tasks', style: Theme
-                        .of(context)
-                        .textTheme
-                        .displayMedium,);
+                  if (!snapshot.hasData) {
+                    return Text(
+                      'There is No Tasks',
+                      style: Theme.of(context).textTheme.displayMedium,
+                    );
                   }
 
-                  List<OneTaskModel> tasks = snapshot.data?.docs.map((e) => e.data()).toList() ?? [];
+                  List<OneTaskModel> tasks =
+                      snapshot.data?.docs.map((e) => e.data()).toList() ?? [];
 
-                  return   tasks.isEmpty ? Text('There is No Tasks', style: Theme
-                      .of(context)
-                      .textTheme
-                      .displayMedium,) :
-
-                    Expanded(
-                    child: ListView.separated(itemBuilder: (context, index) {
-                      return TaskCard(tasks[index]);
-                    }, separatorBuilder: (context, index) {
-                      return SizedBox(height: 10.h);
-                    }, itemCount: tasks.length),
-                  );
-
-                },)
-
-
+                  return tasks.isEmpty
+                      ? Text(
+                          'There is No Tasks',
+                          style: Theme.of(context).textTheme.displayMedium,
+                        )
+                      : Expanded(
+                          child: ListView.separated(
+                              itemBuilder: (context, index) {
+                                return TaskCard(
+                                  taskModel: tasks[index],
+                                  deleteFunction: () {
+                                    FireBaseFunction.deleteTask(
+                                        tasks[index].id);
+                                  },
+                                  doneFunction: () {
+                                    FireBaseFunction.updateStatus(tasks[index].id, tasks[index]);
+                                  },
+                                );
+                              },
+                              separatorBuilder: (context, index) {
+                                return SizedBox(height: 10.h);
+                              },
+                              itemCount: tasks.length),
+                        );
+                },
+              )
             ],
           ),
         );
