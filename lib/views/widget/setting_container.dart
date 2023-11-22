@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'package:todo_app/views/widget/setting_modalBottomSheet.dart';
-
-import '../../provider/app_provider.dart';
 import '../../shared/styles/app_color.dart';
 
 class SettingContainer extends StatelessWidget {

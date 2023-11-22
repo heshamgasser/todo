@@ -12,9 +12,8 @@ import 'package:todo_app/views/widget/date_picker_container_addTask.dart';
 import 'package:todo_app/views/widget/time_picker_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
-class AddTask extends StatelessWidget {
-  const AddTask({super.key});
+class UpdateTask extends StatelessWidget {
+  const UpdateTask({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class AddTask extends StatelessWidget {
               child: ListView(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.addNewTask,
+                    AppLocalizations.of(context)!.updateNewTask,
                     style: Theme.of(context).textTheme.displayMedium,
                     textAlign: TextAlign.center,
                   ),
@@ -75,7 +74,7 @@ class AddTask extends StatelessWidget {
                   Row(
                     children: [
                       CustomElevatedButton(
-                        buttonText: AppLocalizations.of(context)!.add,
+                        buttonText: AppLocalizations.of(context)!.update,
                         buttonColor: AppColor.lightPrimaryColor,
                         buttonFunction: () {
                           if (homeProvider.formKey.currentState!.validate()) {

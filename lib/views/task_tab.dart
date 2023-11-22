@@ -77,6 +77,9 @@ class TasksTab extends StatelessWidget {
                                   doneFunction: () {
                                     FireBaseFunction.updateStatus(tasks[index].id, tasks[index]);
                                   },
+                                  onTapFunction: (){
+
+                                  },
                                 );
                               },
                               separatorBuilder: (context, index) {
